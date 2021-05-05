@@ -66,3 +66,31 @@ h1{
     align-items: center;
     background-color: transparent;
 }
+
+.button-container{
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 200px;
+    left: 25vw;
+    width: 50vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-container button{
+    align-items: center;
+    background: #B9CEEE;
+    border-radius: 20px;
+    border: none;
+    width: 112px;
+    height: 48px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12);
+    font-family: Unna;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 15px 30px 15px 30px;
+}
