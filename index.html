@@ -7,12 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Unna&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $("tbody tr:even").css("background", "#F2FAFE");
-            $("tbody tr:odd").css("background", "#E7F1FF");
-        });
-        </script>
+    <script src="scripts.js"></script>
 </head>
 
 <body>
@@ -28,7 +23,7 @@
         <h1>Your Timetable</h1>
     </div>
     <div class ='button-container'>
-        <button>XII A</button>
+        <button id = 'xiia-button' onclick="openOverlay()">XII A</button>
         <button>XII B</button>
         <button>XII A</button>
         <button>XII B</button>
@@ -36,7 +31,7 @@
         <button>XII B</button>
         <button>XII A</button>
     </div>
-    <div class = 'table-overlay'>
+    <div class = 'table-overlay' id ='timetable-overlay' onclick="closeOverlay()">
         <h2>XII A</h2>
         <table>
             <thead>
@@ -47,8 +42,6 @@
                 <th class = 'timing-header'>8:00 - 9:00</th>
                 <th class = 'timing-header'>8:00 - 9:00</th>
                 <th class = 'timing-header'>8:00 - 9:00</th>
-
-
             </tr>
             </thead>
             <tbody>

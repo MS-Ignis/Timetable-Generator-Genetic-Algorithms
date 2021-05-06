@@ -93,19 +93,24 @@ h1{
     text-align: center;
     color: #FFFFFF;
     margin: 15px 30px 15px 30px;
+    cursor: pointer;
 }
 
 .table-overlay{
-    position: absolute;
+    position:fixed;
+    top:0;
+    left:0;
     flex-wrap: wrap;
-    left: 300px;
-    top: 200px;
-    display: flex;
-    width: 960px;
-    height: 480px;
+    /* left: 300px;
+    top: 200px; */
+    display: none;
+    /* width: 960px;
+    height: 480px; */
+    width: 100%;
+    height: 100%;
     align-items: center;
     justify-content: center;
-    background-color: white;
+    background-color: rgba(0,0,0,0.5);
     box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.12);
 }
 
@@ -113,22 +118,24 @@ h1{
     position: absolute;
     align-items: center;
     justify-content: center;
-    top: 0px;
+    top: 170px;
     font-family: 'Unna', serif;
     font-style: normal;
     font-weight: normal;
     font-size: 36px;
     display: flex;
     color: #000000;
-    width: 95%;
+    width: 60%;
     background-color: #F1F6FF;
+    z-index: 3;
 }
 .table-overlay table{
     position: absolute;
-    top: 80px;
-    width: 95%;
-    border-collapse: separate; 
-    border-spacing: 48px 10px;
+    top: 250px;
+    width: 60%;
+    border-collapse: separate;
+    background-color: white;
+    z-index: 3;
 }
 
 .timing-header{
@@ -141,6 +148,7 @@ h1{
     font-weight: 500;
     box-shadow : 0px 2px 4px rgba(0, 0, 0, 0.12);
     padding: 10px 10px;
+    background-color: white;
 }
 
 .day-header{
@@ -164,4 +172,5 @@ h1{
     color: #000000;
     width: 96px;
     height: 50px;
+    padding: 10px 30px;
 }
