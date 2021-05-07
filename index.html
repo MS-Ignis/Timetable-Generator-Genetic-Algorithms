@@ -7,6 +7,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Unna&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
     <script src="scripts.js"></script>
 </head>
 
@@ -22,8 +25,8 @@
     <div class='h1-container'>
         <h1>Your Timetable</h1>
     </div>
-    <div class ='button-container'>
-        <button id = 'xiia-button' onclick="openOverlay()">XII A</button>
+    <div class='button-container'>
+        <button id='xiia-button' onclick="openOverlay()">XII A</button>
         <button>XII B</button>
         <button>XII A</button>
         <button>XII B</button>
@@ -31,64 +34,65 @@
         <button>XII B</button>
         <button>XII A</button>
     </div>
-    <div class = 'table-overlay' id ='timetable-overlay'>
-        <div class = "outside-content" onclick="closeOverlay()"></div>
+    <div class='table-overlay' id='timetable-overlay'>
+        <div class="outside-content" onclick="closeOverlay()"></div>
         <h2>XII A</h2>
         <table>
             <thead>
-            <tr>
-                <th></th>
-                <th class = 'timing-header'>8:00 - 9:00</th>
-                <th class = 'timing-header'>8:00 - 9:00</th>
-                <th class = 'timing-header'>8:00 - 9:00</th>
-                <th class = 'timing-header'>8:00 - 9:00</th>
-                <th class = 'timing-header'>8:00 - 9:00</th>
-            </tr>
+                <tr>
+                    <th></th>
+                    <th class='timing-header'>8:00 - 9:00</th>
+                    <th class='timing-header'>8:00 - 9:00</th>
+                    <th class='timing-header'>8:00 - 9:00</th>
+                    <th class='timing-header'>8:00 - 9:00</th>
+                    <th class='timing-header'>8:00 - 9:00</th>
+                </tr>
             </thead>
             <tbody>
-            <tr>
-                <td class ='day-header'>Monday</td>
-                <td class = 'period-cell'>E N G L I S H<br/>neha dubey</td>
-                <td class = 'period-cell'>E N G L I S H<br/>neha dubey</td>
-                <td class = 'period-cell'>E N G L I S H<br/>neha dubey</td>
-                <td class = 'period-cell'>E N G L I S H<br/>neha dubey</td>
-                <td class = 'period-cell'>E N G L I S H<br/>neha dubey</td>
-            </tr>
-            <tr>
-                <td class ='day-header'>Monday</td>
-                <td class = 'period-cell'>E N G L I S H<br/>neha dubey</td>
-                <td class = 'period-cell'>E N G L I S H<br/>neha dubey</td>
-                <td class = 'period-cell'>E N G L I S H<br/>neha dubey</td>
-                <td class = 'period-cell'>E N G L I S H<br/>neha dubey</td>
-                <td class = 'period-cell'>E N G L I S H<br/>neha dubey</td>
-            </tr>
-            <tr>
-                <td class ='day-header'>Monday</td>
-                <td class = 'period-cell'>E N G L I S H<br/>neha dubey</td>
-                <td class = 'period-cell'>E N G L I S H<br/>neha dubey</td>
-                <td class = 'period-cell'>E N G L I S H<br/>neha dubey</td>
-                <td class = 'period-cell'>E N G L I S H<br/>neha dubey</td>
-                <td class = 'period-cell'>E N G L I S H<br/>neha dubey</td>
-            </tr>
-            <tr>
-                <td class ='day-header'>Monday</td>
-                <td class = 'period-cell'>E N G L I S H<br/>neha dubey</td>
-                <td class = 'period-cell'>E N G L I S H<br/>neha dubey</td>
-                <td class = 'period-cell'>E N G L I S H<br/>neha dubey</td>
-                <td class = 'period-cell'>E N G L I S H<br/>neha dubey</td>
-                <td class = 'period-cell'>E N G L I S H<br/>neha dubey</td>
-            </tr>
-            <tr>
-                <td class ='day-header'>Monday</td>
-                <td class = 'period-cell'>E N G L I S H<br/>neha dubey</td>
-                <td class = 'period-cell'>E N G L I S H<br/>neha dubey</td>
-                <td class = 'period-cell'>E N G L I S H<br/>neha dubey</td>
-                <td class = 'period-cell'>E N G L I S H<br/>neha dubey</td>
-                <td class = 'period-cell'>E N G L I S H<br/>neha dubey</td>
-            </tr>
+                <tr>
+                    <td class='day-header'>Monday</td>
+                    <td class='period-cell'>E N G L I S H<br />neha dubey</td>
+                    <td class='period-cell'>E N G L I S H<br />neha dubey</td>
+                    <td class='period-cell'>E N G L I S H<br />neha dubey</td>
+                    <td class='period-cell'>E N G L I S H<br />neha dubey</td>
+                    <td class='period-cell'>E N G L I S H<br />neha dubey</td>
+                </tr>
+                <tr>
+                    <td class='day-header'>Monday</td>
+                    <td class='period-cell'>E N G L I S H<br />neha dubey</td>
+                    <td class='period-cell'>E N G L I S H<br />neha dubey</td>
+                    <td class='period-cell'>E N G L I S H<br />neha dubey</td>
+                    <td class='period-cell'>E N G L I S H<br />neha dubey</td>
+                    <td class='period-cell'>E N G L I S H<br />neha dubey</td>
+                </tr>
+                <tr>
+                    <td class='day-header'>Monday</td>
+                    <td class='period-cell'>E N G L I S H<br />neha dubey</td>
+                    <td class='period-cell'>E N G L I S H<br />neha dubey</td>
+                    <td class='period-cell'>E N G L I S H<br />neha dubey</td>
+                    <td class='period-cell'>E N G L I S H<br />neha dubey</td>
+                    <td class='period-cell'>E N G L I S H<br />neha dubey</td>
+                </tr>
+                <tr>
+                    <td class='day-header'>Monday</td>
+                    <td class='period-cell'>E N G L I S H<br />neha dubey</td>
+                    <td class='period-cell'>E N G L I S H<br />neha dubey</td>
+                    <td class='period-cell'>E N G L I S H<br />neha dubey</td>
+                    <td class='period-cell'>E N G L I S H<br />neha dubey</td>
+                    <td class='period-cell'>E N G L I S H<br />neha dubey</td>
+                </tr>
+                <tr>
+                    <td class='day-header'>Monday</td>
+                    <td class='period-cell'>E N G L I S H<br />neha dubey</td>
+                    <td class='period-cell'>E N G L I S H<br />neha dubey</td>
+                    <td class='period-cell'>E N G L I S H<br />neha dubey</td>
+                    <td class='period-cell'>E N G L I S H<br />neha dubey</td>
+                    <td class='period-cell'>E N G L I S H<br />neha dubey</td>
+                </tr>
             </tbody>
         </table>
     </div>
+    <script src="components.js" type="text/babel"></script>
 </body>
 
 </html>
