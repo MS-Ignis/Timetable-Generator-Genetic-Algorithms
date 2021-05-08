@@ -150,7 +150,7 @@ def selection():
 
 
 def reproduce():
-    """Creates the next generation which is an improvement over the
+    """Creates the neeext generation which is an improvement over the
         previous generation. The parents for the next generation are
         chosen using the selection function and each member of the
         next generation is a combination of the parents. There is also
