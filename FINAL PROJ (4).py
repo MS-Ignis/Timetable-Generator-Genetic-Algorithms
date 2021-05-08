@@ -30,20 +30,20 @@ sqlpass = input("Please enter password to access the database ►")
 db = sql.connect(host="localhost", user="root", password=sqlpass,
                  database="ttgen", auth_plugin='mysql_native_password')
 cursor = db.cursor()
-str = "select count(teacher_name) from teacher_info"
-cursor.execute(str)
+s = "select count(teacher_name) from teacher_info"
+cursor.execute(s)
 no_of_teachers = (cursor.fetchall()[0][0])
-str = "select teacher_name from teacher_info"
-cursor.execute(str)
+s = "select teacher_name from teacher_info"
+cursor.execute(s)
 teacher_list = []
 for i in range(no_of_teachers):
     teacher_list.append(cursor.fetchone()[0])
 
-str = "select count(teachers_teaching) from class_info"
-cursor.execute(str)
+s = "select count(teachers_teaching) from class_info"
+cursor.execute(s)
 classes = cursor.fetchall()[0][0]
-str = "select teachers_teaching from class_info"
-cursor.execute(str)
+s = "select teachers_teaching from class_info"
+cursor.execute(s)
 teachers_for_class = []
 for i in range(classes):
     teachers_for_class.append(cursor.fetchone()[0].split(","))
@@ -51,9 +51,9 @@ for i in range(classes):
     for j in range(len(teachers_for_class[i])):
         teachers_for_class[i][j] = teacher_list.index(
             teachers_for_class[i][j]) + 1
-str = "select class from class_info"
+s = "select class from class_info"
 class_list = []
-cursor.execute(str)
+cursor.execute(s)
 for i in range(classes):
     class_list.append(cursor.fetchone()[0])
 
@@ -190,7 +190,12 @@ def printtofile(arr):
             for k in range(periods):
                 final[i][j][k + 1] = teacher_list[int(arr[i][j][k]) - 1]
     
-    print(final)
+    count = 0
+    for i in final :
+        fpath = class_list[count] + '.csv'
+        pd.DataFrame(i).to_csv(fpath)
+        count = count + 1
+
     wb = openpyxl.Workbook()
     ws = wb.active
     for i in range(periods + 1):
