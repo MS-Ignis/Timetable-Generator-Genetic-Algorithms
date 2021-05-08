@@ -106,7 +106,7 @@ def fitness():
     in two classes at the same time). The function ensures that even for
     small differences in the number of collisions the fitness values are far
     apart. """
-.
+
     for i in range(popsize):
         no_of_collisions = 0
         for j in range(classes):
@@ -189,6 +189,8 @@ def printtofile(arr):
 
             for k in range(periods):
                 final[i][j][k + 1] = teacher_list[int(arr[i][j][k]) - 1]
+    
+    print(final)
     wb = openpyxl.Workbook()
     ws = wb.active
     for i in range(periods + 1):
