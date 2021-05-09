@@ -57,7 +57,7 @@ cursor.execute(s)
 for i in range(classes):
     class_list.append(cursor.fetchone()[0])
 
-pd.DataFrame([class_list]).to_csv('class_list.csv')
+pd.DataFrame([class_list]).to_csv('class_list.csv', header= None,index=False)
 
 popsize = 100
 days = 5
@@ -195,7 +195,7 @@ def printtofile(arr):
     count = 0
     for i in final :
         fpath = class_list[count] + '.csv'
-        pd.DataFrame(i).to_csv(fpath)
+        pd.DataFrame(i).to_csv(fpath, header = None, index=False)
         count = count + 1
 
     wb = openpyxl.Workbook()
