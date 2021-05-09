@@ -57,6 +57,8 @@ cursor.execute(s)
 for i in range(classes):
     class_list.append(cursor.fetchone()[0])
 
+pd.DataFrame([class_list]).to_csv('class_list.csv')
+
 popsize = 100
 days = 5
 periods = 5

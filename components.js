@@ -1,3 +1,11 @@
+// papaparse example
+// Papa.parse("XI A.csv", {
+//     download:true,
+// 	complete: function(results) {
+// 		console.log("Finished:", results.data);
+// 	}
+// });
+
 const classList = ['XIIA', 'XIIB', 'XIIC', 'XIID'];
 
 class ButtonClass extends React.Component{
@@ -11,7 +19,7 @@ class ButtonClass extends React.Component{
 
     render(){
         const renderClassList = classList.map(item => <button id = {item+'-button'} key = {item} onClick = {this.clickHandler}>{item}</button>)
-        console.log(renderClassList)
+        // console.log(renderClassList)
         return (
             <div>{renderClassList}</div>
         )
