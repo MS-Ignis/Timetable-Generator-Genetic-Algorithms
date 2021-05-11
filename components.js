@@ -5,21 +5,37 @@
 // 		console.log("Finished:", results.data);
 // 	}
 // });
-
-const classList = ['XIIA', 'XIIB', 'XIIC', 'XIID'];
-
-class ButtonClass extends React.Component{
-    constructor(props){
+class ButtonClass extends React.Component {
+    constructor(props) {
         super(props)
+        this.state = {
+            classList: []
+        }
         this.clickHandler = this.clickHandler.bind(this);
+        this.getData = this.getData.bind(this);
     }
-    clickHandler(){
+    async componentDidMount() {
+        this.setState({classList: await this.getData('class_list.csv')})
+    }
+
+    getData(filename) {
+        return new Promise(resolve => {
+            Papa.parse(filename, {
+                download: true,
+                complete: results => {
+                    resolve(results.data[0]);
+                }
+            });
+        });
+    }
+
+    clickHandler() {
         document.getElementById('timetable-overlay').style.display = 'flex';
     }
 
-    render(){
-        const renderClassList = classList.map(item => <button id = {item+'-button'} key = {item} onClick = {this.clickHandler}>{item}</button>)
-        // console.log(renderClassList)
+    render() {
+        const renderClassList = this.state.classList.map(item => <button id={item + '-button'} key={item} onClick={this.clickHandler}>{item}</button>)
+        console.log(renderClassList)
         return (
             <div>{renderClassList}</div>
         )
